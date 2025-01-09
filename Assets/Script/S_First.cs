@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class S_First : MonoBehaviour
 {
-    float speed = 0.001f;
+    float speed = 0.005f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,17 +16,22 @@ public class S_First : MonoBehaviour
     void Update()
     {
         Vector2 pos = transform.position;
-        pos.x += speed;
-        transform.position = pos;
+        
 
-        if (pos.x >= 9.5) {
+
+
+        pos.x += speed;
+
+        Vector2 pos1 = Camera.main.WorldToScreenPoint(pos);
+
+        if (pos1.x >= Screen.width) {
 
             speed = speed * -1;
 
 
 
         }
-        else if (pos.x <= -9.5)
+        else if (pos1.x <= 0)
         {
 
             speed = speed * -1;
@@ -34,7 +40,7 @@ public class S_First : MonoBehaviour
 
         }
 
-        pos.x += speed;
+       
 
         transform.position = pos;
     }
