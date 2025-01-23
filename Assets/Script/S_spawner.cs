@@ -27,7 +27,6 @@ public class S_spawner : MonoBehaviour
         {
             if (Button.Length <= 5)
             {
-                SpriteRenderer. = pop1[Random.Range(1,3)];
             }
         }
     }
