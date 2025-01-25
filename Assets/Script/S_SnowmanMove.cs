@@ -12,6 +12,7 @@ public class S_SnowmanMove : MonoBehaviour
     public float t = 0f;//Lerp's value
 
     public bool gobcak = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +25,8 @@ public class S_SnowmanMove : MonoBehaviour
         if (gobcak == true)//When the lerp value is 1, it means that the object has moved to the target position immediately after the reverse
         {
 
-            t -= movespeed * Time.deltaTime;
-            if (t <= 0f)
+            t -= movespeed * Time.deltaTime;//Control the snowman to spin
+            if (t <= 0f)//Determine that lerp has reached a predetermined value
             {
                 t = 0f;
                 gobcak = false;
@@ -33,8 +34,8 @@ public class S_SnowmanMove : MonoBehaviour
         }
         else//It's also the opposite of the above
         {
-            t += movespeed * Time.deltaTime;
-            if (t >= 1f)
+            t += movespeed * Time.deltaTime;//Control the snowman to spin
+            if (t >= 1f)//Determine that lerp has reached a predetermined value
             {
                 t = 1f;
                 gobcak = true;

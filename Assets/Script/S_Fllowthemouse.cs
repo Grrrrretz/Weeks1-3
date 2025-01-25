@@ -20,6 +20,6 @@ public class S_Fllowthemouse : MonoBehaviour
 
         pos = Camera.main.ScreenToWorldPoint(pos);
 
-        transform.position = new Vector2(pos.x, pos.y);
+        transform.position = new Vector2(pos.x, transform.position.y);
     }
 }
