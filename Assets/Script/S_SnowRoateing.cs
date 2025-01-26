@@ -22,7 +22,7 @@ public class S_SnowRoateing : MonoBehaviour
         Vector3 rotation = transform.eulerAngles;//Gets the rotation of an object to change the rotation of the object
         Vector3 orgposition = transform.position;//Gets the position of the object to change the position of the object
 
-        rotation.z += rotatspeed * Time.deltaTime;//Adding a speed value to the Z-axis uses the object to rotate, using deltatime as a limit to smooth the rotation
+        rotation.z += rotatspeed *curve.Evaluate(anim) * Time.deltaTime;//Adding a speed value to the Z-axis uses the object to rotate, using deltatime as a limit to smooth the rotation
 
         transform.eulerAngles = rotation;//Assigns the rotation value back to the original value
 
